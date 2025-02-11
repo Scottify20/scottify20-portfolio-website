@@ -3,19 +3,92 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  overflow: hidden;
+  width: 100%;
+  scrollbar-color: #674b22 #b49160;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Perfect Dos Vga', Helvetica, sans-serif;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  -webkit-overflow-scrolling: touch;
+  @apply text-tva-orange;
+}
+
+/* styles/globals.css or a CSS Module file */
+@font-face {
+  font-family: 'Perfect Dos Vga';
+  src: url('../../public/fonts/Perfect\ DOS\ VGA\ 437.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.debug-border {
+  outline: 1px solid rgba(255, 0, 0, 0.5);
+}
+
+:root {
+  font-size: 16px;
+}
+.text-body {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+}
+@media (max-width: 480px) {
+  :root {
+    font-size: 14px;
+  }
+  .text-body {
+    /* font-size: 2rem; */
+    line-height: 2.285rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .scrollbar-thin-mobile {
+    scrollbar-width: thin;
+  }
+}
+
+.inverted {
+  @apply p-[0.1em] pl-[0.75rem] pr-[0.25em] text-background inline-block; /* Added inline-block */
+  position: relative;
+  text-shadow: -0.15px -0.15px 0 #0a0a0a, 0.15px -0.15px 0 #0a0a0a, -0.15px 0.15px 0 #0a0a0a,
+    0.15px 0.15px 0 #0a0a0a;
+
+  max-width: fit-content;
+
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  word-wrap: break-word;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    @apply bg-tva-orange;
+    /* mix-blend-mode: multiply; */
+  }
+}
+
+.pixelated-mask {
+  mask-image: radial-gradient(#000 0.9px, rgba(255, 255, 255, 0.4) 0.9px);
+  mask-size: 2.7px 2.7px;
+  mask-repeat: repeat;
+}
+
+.drop-shadow {
+  filter: drop-shadow(0 0 5px rgba(138, 82, 18, 0.78));
 }
