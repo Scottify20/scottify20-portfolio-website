@@ -15,6 +15,12 @@ export default {
       },
       screens: {
         mobile: '480px',
+        xs: '16rem',
+        sm: '20rem',
+      },
+      containers: {
+        xs: '16rem',
+        sm: '20rem',
       },
     },
   },
@@ -25,5 +31,6 @@ export default {
     function ({ addVariant }: { addVariant: (name: string, css: string) => void }) {
       addVariant('no-hover', '@media (hover: none)');
     },
+    require('@tailwindcss/container-queries'),
   ],
 } satisfies Config;

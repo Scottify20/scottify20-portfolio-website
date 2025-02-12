@@ -19,7 +19,7 @@ export default function Frame(props: FrameProps) {
 
       <div
         id="inner-content-container"
-        className={combinedClasses('inner', 'drop-shadow', 'p-5 md:p-8 lg:p-8')}
+        className={combinedClasses('inner', 'drop-shadow', 'p-4 md:p-8 lg:p-8')}
       >
         {props.content}
       </div>
