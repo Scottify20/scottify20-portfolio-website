@@ -30,10 +30,10 @@ export default function Skill({ iconURL, label, altText }: SkillProps) {
 
       const newPosition: Partial<Record<'left' | 'right' | 'top' | 'bottom', string>> = {};
 
-      if (labelBox.right > gridBox.right) newPosition.right = '0.5rem';
-      if (labelBox.left < gridBox.left) newPosition.left = '0.5rem';
-      if (labelBox.bottom > gridBox.bottom) newPosition.bottom = '2.5rem';
-      if (labelBox.top < gridBox.top) newPosition.top = '2.5rem';
+      labelBox.right > gridBox.right ? (newPosition.right = '0.5rem') : null;
+      labelBox.left < gridBox.left ? (newPosition.left = '0.5rem') : null;
+      labelBox.bottom > gridBox.bottom ? (newPosition.bottom = '2.5rem') : null;
+      labelBox.top < gridBox.top ? (newPosition.top = '2.5rem') : null;
 
       setPosition((prev) =>
         JSON.stringify(prev) === JSON.stringify(newPosition) ? prev : newPosition
@@ -64,7 +64,7 @@ export default function Skill({ iconURL, label, altText }: SkillProps) {
         checkOverflow();
       }}
       onMouseLeave={handleMouseLeave}
-      className={`place-self-center relative z-[${zIndex}] group select-none`}
+      className={`place-self-start relative z-[${zIndex}] group select-none`}
     >
       <p
         ref={labelRef}
@@ -75,7 +75,7 @@ export default function Skill({ iconURL, label, altText }: SkillProps) {
       >
         {label}
       </p>
-      <img src={iconURL} alt={altText} width="56px" className="aspect-square z-0" />
+      <img src={iconURL} alt={altText} width="48px" className="aspect-square z-0" />
     </div>
   );
 }

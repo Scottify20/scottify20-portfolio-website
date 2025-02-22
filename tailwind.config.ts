@@ -26,7 +26,7 @@ export default {
   },
   plugins: [
     function ({ addVariant }: { addVariant: (name: string, css: string) => void }) {
-      addVariant('supports-hover', '@media (hover: none)');
+      addVariant('supports-hover', '@media (hover: hover)');
     },
     function ({ addVariant }: { addVariant: (name: string, css: string) => void }) {
       addVariant('no-hover', '@media (hover: none)');

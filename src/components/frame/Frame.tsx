@@ -1,4 +1,3 @@
-import { div } from 'motion/react-client';
 import styles from './Frame.module.css';
 import { ReactNode } from 'react';
 
@@ -19,7 +18,7 @@ export default function Frame(props: FrameProps) {
 
       <div
         id="inner-content-container"
-        className={combinedClasses('inner', 'drop-shadow', 'p-4 md:p-8 lg:p-8')}
+        className={combinedClasses('inner', 'drop-shadow', 'sm:p-4 mobile:p-6 md:p-8 lg:p-8 ')}
       >
         {props.content}
       </div>

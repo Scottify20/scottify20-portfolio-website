@@ -29,12 +29,13 @@ const contacts: ContactIconProps[] = [
 function ContactIcon(props: ContactIconProps) {
   return (
     <a
-      className="hover:brightness-150 hover:saturate-50"
+      tabIndex={0}
+      className=" hover:brightness-150 hover:saturate-50 focus:bg-[rgba(255, 185, 87, 0.075)]"
       href={props.url}
       target="_blank"
       aria-label={props.label}
     >
-      <img width="36px" height="36px" src={props.iconURL} alt={props.altText}></img>
+      <img width="40px" className="aspect-square" src={props.iconURL} alt={props.altText}></img>
     </a>
   );
 }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,7 +17,8 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Perfect Dos Vga', Helvetica, sans-serif;
+  font-family: 'IBM Plex Mono', Helvetica, sans-serif;
+  font-weight: 500;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -23,7 +26,6 @@ body {
   @apply text-tva-orange;
 }
 
-/* styles/globals.css or a CSS Module file */
 @font-face {
   font-family: 'Perfect Dos Vga';
   src: url('../../public/fonts/Perfect\ DOS\ VGA\ 437.ttf') format('truetype');
@@ -32,16 +34,13 @@ body {
   font-display: swap;
 }
 
-.debug-border {
-  outline: 1px solid rgba(255, 0, 0, 0.5);
-}
-
 :root {
   font-size: 16px;
 }
 .text-body {
-  font-size: 1.75rem;
-  line-height: 2.25rem;
+  /* font-size: 1.75rem;
+  line-height: 2.25rem; */
+  @apply text-2xl;
 }
 @media (max-width: 480px) {
   :root {
@@ -49,7 +48,7 @@ body {
   }
   .text-body {
     /* font-size: 2rem; */
-    line-height: 2.285rem;
+    /* line-height: 2.285rem; */
   }
 }
 
@@ -60,7 +59,8 @@ body {
 }
 
 .inverted {
-  @apply p-[0.1em] pl-[0.75rem] pr-[0.25em] text-background inline-block; /* Added inline-block */
+  font-family: 'Perfect Dos Vga', Helvetica, sans-serif;
+  @apply p-[0.1em] pl-[0.75rem] pr-[0.25em] text-background inline-block;
   position: relative;
   text-shadow: -0.15px -0.15px 0 #0a0a0a, 0.15px -0.15px 0 #0a0a0a, -0.15px 0.15px 0 #0a0a0a,
     0.15px 0.15px 0 #0a0a0a;
@@ -82,9 +82,30 @@ body {
   }
 }
 
+.bordered {
+  @apply px-[0.6em] py-[0.15em] inline-block;
+  position: relative;
+
+  max-width: fit-content;
+
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  word-wrap: break-word;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    @apply border-tva-orange border-[2px];
+  }
+}
+
 .pixelated-mask {
   mask-image: radial-gradient(#000 0.9px, rgba(255, 255, 255, 0.4) 0.9px);
-  mask-size: 2.7px 2.7px;
+  mask-size: 2.8px 2.8px;
   mask-repeat: repeat;
 }
 
