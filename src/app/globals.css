@@ -9,7 +9,6 @@
 }
 
 html {
-  overflow: hidden;
   width: 100%;
   scrollbar-color: #674b22 #b49160;
 }
@@ -107,6 +106,10 @@ body {
   mask-image: radial-gradient(#000 0.9px, rgba(255, 255, 255, 0.4) 0.9px);
   mask-size: 2.8px 2.8px;
   mask-repeat: repeat;
+}
+
+.no-mask {
+  mask-image: none;
 }
 
 .drop-shadow {

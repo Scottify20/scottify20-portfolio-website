@@ -27,22 +27,31 @@ const contacts: ContactIconProps[] = [
 ];
 
 function ContactIcon(props: ContactIconProps) {
+  const { url, label, iconURL, altText } = props;
+
   return (
     <a
       tabIndex={0}
-      className=" hover:brightness-150 hover:saturate-50 focus:bg-[rgba(255, 185, 87, 0.075)]"
-      href={props.url}
+      className=" hover:brightness-150 hover:saturate-50 focus:bg-[rgba(255, 185, 87, 0.075)] self-center"
+      href={url}
       target="_blank"
-      aria-label={props.label}
+      aria-label={label}
     >
-      <img width="40px" className="aspect-square" src={props.iconURL} alt={props.altText}></img>
+      <img width="40px" className="aspect-square" src={iconURL} alt={altText}></img>
     </a>
   );
 }
 
-export default function ContactIcons() {
+interface ContactIconsProps {
+  // layout: 'horizontal' | 'vertical';
+  className: string;
+}
+
+export default function ContactIcons(props: ContactIconsProps) {
+  const { className } = props;
+
   return (
-    <div className="flex flex-row gap-6">
+    <div className={`flex justify-between w-full ${className}`}>
       {contacts.map((contact, index) => (
         <ContactIcon {...contact} key={index}></ContactIcon>
       ))}

@@ -10,7 +10,7 @@ export default function Section(props: SectionProps) {
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="inverted text-2xl sticky top-0 ">{title}</div>
+      <div className="inverted text-2xl sticky top-0">{title}</div>
       <div>{content}</div>
     </div>
   );

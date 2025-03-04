@@ -58,7 +58,7 @@ const skills: SkillProps[] = [
   },
   {
     iconURL: '/images/icons/tech/illustrator.svg',
-    label: 'Illustrator',
+    label: 'Adobe Illustrator',
     altText: 'Adobe Illustrator icon',
   },
   {

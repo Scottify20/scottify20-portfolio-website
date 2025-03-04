@@ -3,27 +3,27 @@ import { ProjectProps } from '@/components/Project';
 const projects: ProjectProps[] = [
   {
     projectTitle: 'Retro Design Portolio Website',
-    thumbnailURL: '/images/thumbnails/Portfolio.png',
+    thumbnailURL: '/images/thumbnails/Portfolio.webp',
     thumbnailAlt: "Thumbnail of Scott Fulguirinas' Portfolio ",
     descriptions: [
       'This portfolio website features a retro-futuristic, monochrome, and pixelated aesthetic, drawing inspiration from classic computer interfaces.',
     ],
-    techUsed: ['Next.js', 'Tailwind CSS', 'TypeScript'],
+    techUsed: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Figma'],
   },
   {
     projectTitle: 'Salida',
-    thumbnailURL: '/images/thumbnails/Salida.png',
+    thumbnailURL: '/images/thumbnails/Salida.webp',
     thumbnailAlt: 'Thumbnail of Salida',
     descriptions: [
       'A web app with all components built from scratch, using the TMDB API to provide film and television enthusiasts with an engaging platform for exploring detailed information about movies, TV shows, and cast and crew.',
 
       'Its mobile-first UI features swipe navigation, smooth transitions, and seamless back gesture support.',
     ],
-    techUsed: ['Angular', 'Firebase', 'Express.js', 'TypeScript'],
+    techUsed: ['Angular', 'Firebase', 'Express.js', 'TypeScript', 'Figma', 'Adobe Illustrator'],
   },
   {
     projectTitle: 'OMDb Titles Browser',
-    thumbnailURL: '/images/thumbnails/OMDbTB.png',
+    thumbnailURL: '/images/thumbnails/OMDbTB.webp',
     thumbnailAlt: 'Thumbnail of OMDb Titles Browser',
     descriptions: [
       "A web app to browse information about Movies, TV Series, and more in the OMDB API and TMDB API's Dataset.",

@@ -111,7 +111,7 @@ export default function AnimatedBorder({
     <div className="@container/border">
       <div
         tabIndex={0}
-        className={`${styles.container}  md:@md/border:supports-hover:p-6 md:@md/border:supports-hover:pt-4  outline-none border-none no-hover:focus:bg-[#ffb9570a] no-hover:focus:outline-tva-orange no-hover:focus:outline-2 outline-offset-[-2px]`}
+        className={`${styles.container}  md:@md/border:supports-hover:p-6 md:@md/border:supports-hover:pt-4  outline-none border-none `}
         onClick={handleClick}
       >
         <svg xmlns="http://www.w3.org/2000/svg">

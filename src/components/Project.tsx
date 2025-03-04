@@ -20,7 +20,7 @@ export default function Project(props: ProjectProps) {
             <img
               src={thumbnailURL}
               alt={thumbnailAlt}
-              className=" @3xl/proj:grid grid-cols-subgrid aspect-[3/2]"
+              className=" @3xl/proj:grid grid-cols-subgrid aspect-[3/2] w-full max-w-[360px]"
             />
           </div>
 

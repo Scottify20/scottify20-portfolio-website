@@ -14,7 +14,9 @@ export default function Frame(props: FrameProps) {
 
   return (
     <div id="frame" className={combinedClasses('frame')}>
-      <div id="nav-and-logo-container">{props.nav}</div>
+      <div id="nav-and-logo-container" className={combinedClasses('nav-and-logo-container')}>
+        {props.nav}
+      </div>
 
       <div
         id="inner-content-container"
