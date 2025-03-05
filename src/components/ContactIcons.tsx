@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface ContactIconProps {
   url: string;
   label: string;
@@ -32,12 +34,12 @@ function ContactIcon(props: ContactIconProps) {
   return (
     <a
       tabIndex={0}
-      className=" hover:brightness-150 hover:saturate-50 focus:bg-[rgba(255, 185, 87, 0.075)] self-center"
+      className=" focus:bg-[rgba(255, 185, 87, 0.075)] self-center"
       href={url}
       target="_blank"
       aria-label={label}
     >
-      <img width="40px" className="aspect-square" src={iconURL} alt={altText}></img>
+      <Image src={iconURL} alt={altText} width={40} height={40} className="aspect-square"></Image>
     </a>
   );
 }

@@ -1,5 +1,6 @@
 import AnimatedBorder from './AnimatedBorder/AnimatedBorder';
 import TechUsedList from './TechUsedChipList';
+import Image from 'next/image';
 
 export interface ProjectProps {
   projectTitle: string;
@@ -16,11 +17,12 @@ export default function Project(props: ProjectProps) {
     <AnimatedBorder>
       <div className="@container/proj">
         <div className="flex flex-col-reverse gap-4 @3xl/proj:grid @3xl/proj:grid-cols-[minmax(auto,180px)_1fr] @3xl/proj:gap-8">
-          <div className="py-2">
-            <img
+          <div className="relative w-full aspect-[3/2] overflow-hidden rounded-sm mt-3 max-w-[360px]">
+            <Image
               src={thumbnailURL}
               alt={thumbnailAlt}
-              className=" @3xl/proj:grid grid-cols-subgrid aspect-[3/2] w-full max-w-[360px]"
+              fill
+              className="object-cover object-center"
             />
           </div>
 

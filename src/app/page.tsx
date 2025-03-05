@@ -1,13 +1,13 @@
 import About from '@/components/About';
 import AnimatedBorder from '@/components/AnimatedBorder/AnimatedBorder';
 import ContactIcons from '@/components/ContactIcons';
-import Experience from '@/components/Experience';
+// import Experience from '@/components/Experience';
 import Frame from '@/components/Frame/Frame';
 import Project from '@/components/Project';
 import Section from '@/components/Section';
 import Skill from '@/components/Skill';
 
-import experiences from '@/data/experiences';
+// import experiences from '@/data/experiences';
 import projects from '@/data/projects';
 import skills from '@/data/skills';
 

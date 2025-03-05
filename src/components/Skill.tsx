@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 export interface SkillProps {
   iconURL: string;
@@ -30,10 +32,18 @@ export default function Skill({ iconURL, label, altText }: SkillProps) {
 
       const newPosition: Partial<Record<'left' | 'right' | 'top' | 'bottom', string>> = {};
 
-      labelBox.right > gridBox.right ? (newPosition.right = '0.5rem') : null;
-      labelBox.left < gridBox.left ? (newPosition.left = '0.5rem') : null;
-      labelBox.bottom > gridBox.bottom ? (newPosition.bottom = '2.5rem') : null;
-      labelBox.top < gridBox.top ? (newPosition.top = '2.5rem') : null;
+      if (labelBox.right > gridBox.right) {
+        newPosition.right = '0.5rem';
+      }
+      if (labelBox.left < gridBox.left) {
+        newPosition.left = '0.5rem';
+      }
+      if (labelBox.bottom > gridBox.bottom) {
+        newPosition.bottom = '2.5rem';
+      }
+      if (labelBox.top < gridBox.top) {
+        newPosition.top = '2.5rem';
+      }
 
       setPosition((prev) =>
         JSON.stringify(prev) === JSON.stringify(newPosition) ? prev : newPosition
@@ -75,7 +85,7 @@ export default function Skill({ iconURL, label, altText }: SkillProps) {
       >
         {label}
       </p>
-      <img src={iconURL} alt={altText} width="48px" className="aspect-square z-0" />
+      <Image src={iconURL} alt={altText} width={48} height={48} className="aspect-square z-0" />
     </div>
   );
 }

@@ -9,7 +9,7 @@ export default function About() {
 
       <div className="flex flex-col gap-4 xl:mb-6">
         <p>
-          I'm a <span className="text-orange-100">Web Developer</span> and{' '}
+          I&apos;m a <span className="text-orange-100">Web Developer</span> and{' '}
           <span className="text-orange-100">UI/UX Designer</span> who enjoys the challenge of
           bringing creative solutions to design and development problems.
         </p>

@@ -1,6 +1,6 @@
 'use client';
 import styles from './AnimatedBorder.module.css';
-import { useState, useEffect, useRef, ReactNode } from 'react';
+import { useState, useEffect, useRef, ReactNode, useCallback } from 'react';
 import throttle from 'lodash.throttle';
 
 interface AnimatedSVGStrokeProps {
@@ -30,14 +30,14 @@ function useAnimatedStroke(fps = 12, speed = 70, gapLength = 0.5) {
   const animationRequestId = useRef<number | null>(null);
   const lastFrameTime = useRef(0);
 
-  const updateDimensions = () => {
+  const updateDimensions = useCallback(() => {
     if (rectRef.current) {
       const rect = rectRef.current.getBoundingClientRect();
       const { perimeter, dashArray } = calculateStrokeValues(rect, gapLength);
       setPerimeter(perimeter);
       setDashArray(dashArray);
     }
-  };
+  }, [gapLength]);
 
   useEffect(() => {
     updateDimensions();
@@ -68,11 +68,11 @@ function useAnimatedStroke(fps = 12, speed = 70, gapLength = 0.5) {
         cancelAnimationFrame(animationRequestId.current);
       }
     };
-  }, [fps, speed, gapLength, perimeter]);
+  }, [fps, speed, gapLength, perimeter, updateDimensions]);
 
   useEffect(() => {
     updateDimensions();
-  }, [gapLength]);
+  }, [gapLength, updateDimensions]);
 
   return { rectRef, dashArray, animationOffset };
 }
